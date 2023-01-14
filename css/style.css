@@ -3,6 +3,8 @@
     fonts link
 */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
 /*=========================
     common style / utilites 
@@ -20,6 +22,10 @@ body{
 .container{
     width: 870px;
     margin: 0 auto;
+}
+
+section{
+    margin-top: 30px;
 }
 
 /*================
@@ -73,15 +79,15 @@ header{
 /*=====================
     player section start 
 ========================*/
-.top_piayers{
-    background-color: #FFFFFF;
-    /* border-bottom: 1px solid #D1D1D1; */
-    border-radius: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-top: 30px;
+.top_piayers, .lates_coures {
+	background-color: #FFFFFF;
+	/* border-bottom: 1px solid #D1D1D1; */
+	border-radius: 5px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 42px;
 }
-.top_title{
+.top_title, .lates_title{
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
@@ -160,4 +166,170 @@ hr{
 .blog .blog_author a{
     text-decoration: none;
     color: #562EFF;
+    transition: .4s ease;
 }
+.blog .blog_author a:hover{
+    text-decoration: underline;
+    color: #ED6B4F;
+}
+/*==========================
+    coures section start now
+============================*/
+.coures .coures_banner img{
+    width: 224px;
+    height: 104px;
+}
+.course_title{
+    max-width: 224px;
+    color: #1e1e1e;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    line-height: 28px;
+    padding-bottom: 7px;
+}
+.coures {
+	background-color: rgb(255, 255, 255);
+	padding: 18px 0px 20px 8px;
+    box-shadow: 2px 2px  rgba(0, 0, 0, 0.05);
+	border-radius: 8px;
+	margin-right: 20px;
+}
+
+.lates_coures{
+    padding-bottom: 50px;
+}
+.courses{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 24px;
+}
+.course_author{
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 20px;
+}
+.course_author a{
+    text-decoration: none;
+    color: #ED6B4F;
+    transition: .4s;
+}
+.course_author a:hover{
+    text-decoration: underline;
+    color: #562EFF;
+}
+.course_info{
+    display: flex;
+    column-gap: 30px;
+}
+
+.course_info .fa-star{
+    color: #FFC014;
+    font-size: 12px;
+}
+.course_info .emty{
+    color: #AEAEAE;
+}
+.course_info span{
+    color: #A2A2A2;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+}
+.coures_duration{
+    background: #FFE4E8;
+    border-radius: 15px;
+}
+.coures_duration,.coures_duration span{
+    color: #FF4A60;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    padding: 5px 3px 5px 8px;
+}
+/*==========================
+    coures section end
+============================*/
+
+/*==========================
+    @media Query start
+============================*/
+/* Small Devaice start*/
+@media screen and (max-width: 576px) {
+    .container{
+        width: 100%;
+    }
+    /* header section respo */
+    .logo_nav{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    /* top player and blog respo */
+    .players{
+        grid-template-columns: 1fr 
+    }
+    .player{
+        flex-direction: column;
+    }
+    .player img {
+        width: 100%;
+        height: 100%;
+    }
+    .player_title{  
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .top_bloges{
+        grid-template-columns: 1fr;
+    }
+    .blog{
+        flex-direction: column;
+        align-items: left;
+    }
+    .blog .thumbnail img{
+        width: 100%;
+        height: 100%;
+    }
+    .top_title, .lates_title{
+        text-align: center;
+    }
+    /* course srction respo start */
+    .courses {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .coures {
+        padding-right: 15px;
+        margin-bottom: 20px;
+    }
+
+}
+/* Small Devaice end */
+
+/* Medium Device start */
+@media screen and (min-width: 577px) and (max-width: 992px){
+    .container{
+        width: 100%;
+    }
+    /* header section respo */
+    .logo_nav{
+        width: 100%;
+    }
+    .logo{
+        padding-left: 10px;
+    }
+    .navbar{
+        padding-right: 10px;
+    }
+
+    .course_info {
+        column-gap: 10px;
+    }
+}
+/* Medium Device end*/
+/*==========================
+    @media Query end
+============================*/
